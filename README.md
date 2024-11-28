@@ -1,1 +1,1 @@
-# Laborat-rio-de-Transforma-es-Lineares
+# Laboratorio-de-Transformacoes-Lineares
