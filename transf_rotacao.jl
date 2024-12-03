@@ -28,7 +28,7 @@ function rotacao(angulo::Int, matriz_pontos::Matrix{Float64}) :: Matrix{Float64}
 
     else
         
-        error("Dimencao dos pontos invalida")
+        error("Dimencao dos pontos invalida, matriz_pontos deve deve ter dimencao (2 x np) onde np e o numero de pontos.")
         
     end
 
@@ -90,13 +90,13 @@ function rotacao(angulo::Int, eixo::String, matriz_pontos::Matrix{Float64}) :: M
 
         else
 
-            error("Parametro 'eixo' invalido")
+            error("Parametro ``eixo`` invalido")
 
         end
 
     else
         
-        error("Dimencao dos pontos invalida")
+        error("Dimencao dos pontos invalida, matriz_pontos deve deve ter dimencao (3 x np) onde np e o numero de pontos.")
         
     end
 
