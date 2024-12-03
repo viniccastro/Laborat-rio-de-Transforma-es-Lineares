@@ -162,7 +162,7 @@ function plot_imagem(matriz_pontos::Matrix{Float64})
     valor_l, valor_c = size(matriz_pontos)
     
     # tamanho_eixo
-    tamanho_eixo = 1.5
+    tamanho_eixo = 2
 
     # incializando o plot
     plot(legend=false, aspect_ratio=:equal, xlabel = "eixo x", ylabel = "eixo y", zlabel = "eixo z")
@@ -239,23 +239,25 @@ end
 #========================================#
 #       Testes
 #========================================#
-# println("===== tamnha da matriz =====")
+# println("=====>  tamnha da matriz  <=====")
 # println(size(numeros(1, "3d")))
 # println(size(cubo()))
 
 # println()
-# println("===== matriz =====")
+# println("=====>  matriz  <=====")
 # display(numeros(1, "3d"))
 # display(cubo())
 
-# =========== Dados ===========
+
+
+# ==========>  Dados entrada <===========
 # display(plot_imagem(numeros(00, "2d")))
 # display(plot_imagem(numeros(00, "3d")))
 # display(plot_imagem(cubo()))
 
 
 
-# ==========================> rotacao <==========================
+# =========================>  rotacao  <=========================
 # display(plot_imagem(rotacao(90, numeros(00,"2d"))))      # true
 # display(plot_imagem(rotacao(90, "x", numeros(00,"2d")))) # true
 # display(plot_imagem(rotacao(90, "x", numeros(00,"3d")))) # true 
@@ -267,7 +269,7 @@ end
 
 
 
-# =========================> reflexao <=========================
+# ========================>  reflexao  <========================
 # display(plot_imagem(reflexao("x", numeros(00,"2d"))))   # true
 # display(plot_imagem(reflexao("y", numeros(00,"2d"))))   # true
 # display(plot_imagem(reflexao("xy", numeros(00,"2d"))))  # true
@@ -308,7 +310,7 @@ end
 
 
 
-# ==============================> esticamento <===============================
+# =============================>  esticamento  <==============================
 # display(plot_imagem(esticamento([0.5, 0.5], numeros(00, "2d"))))      # true
 # display(plot_imagem(esticamento([1.2, 0.5], numeros(00, "2d"))))      # true
 # display(plot_imagem(esticamento([0.5, 0.5, 0.5], numeros(00, "2d")))) # true
@@ -321,8 +323,23 @@ end
 
 # =========== cisalhamento ===========
 
-# =========== aleatoria ===========
 
+
+
+# =========================>  aleatoria  <=========================
+# vetor1 = [1.0 0.5 ; 0.0 2.0]
+# vetor2 = [cos(pi) -sin(pi) ; sin(pi) cos(pi)]
+# vetor3 = [1.0 0.5 0.0; 0.0 2.0 0.0 ; 0.0 0.0 0.0]
+# vetor4 = [1.0 0.0 0.0; 0.0 0.0 1.0 ; 0.0 1.0 0.0]
+
+# display(plot_imagem(aleatoria(vetor1, numeros(00, "2d")))) # true
+# display(plot_imagem(aleatoria(vetor2, numeros(00, "2d")))) # true
+# display(plot_imagem(aleatoria(vetor3, numeros(00, "2d")))) # true
+# display(plot_imagem(aleatoria(vetor1, numeros(00, "3d")))) # true
+# display(plot_imagem(aleatoria(vetor3, numeros(00, "3d")))) # true
+# display(plot_imagem(aleatoria(vetor4, numeros(00, "3d")))) # true
+# display(plot_imagem(aleatoria(vetor3, cubo())))            # true
+# display(plot_imagem(aleatoria(vetor4, cubo())))            # true
 
 
 
