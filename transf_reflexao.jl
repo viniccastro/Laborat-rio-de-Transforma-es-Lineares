@@ -128,4 +128,3 @@ function reflexao(eixo::String, matriz_pontos::Matrix{Float64}) :: Matrix{Float6
     return nova_matriz
 
 end
-#
