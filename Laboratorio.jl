@@ -251,14 +251,21 @@ end
 # =========== Dados ===========
 # display(plot_imagem(numeros(00, "2d")))
 # display(plot_imagem(numeros(00, "3d")))
-display(plot_imagem(cubo()))
+# display(plot_imagem(cubo()))
 
-# =========== rotacao ===========
-# display(plot_imagem(rotacao(90,numeros(1,"2d"))))
-# display(plot_imagem(rotacao(90,"x",numeros(1,"3d"))))
+# ==========================> rotacao <==========================
+# display(plot_imagem(rotacao(90, numeros(00,"2d"))))      # true
+# display(plot_imagem(rotacao(90, "x", numeros(00,"2d")))) # true
+# display(plot_imagem(rotacao(90, "x", numeros(00,"3d")))) # true 
+# display(plot_imagem(rotacao(90, "y", numeros(00,"3d")))) # true
+# display(plot_imagem(rotacao(90, "z", numeros(00,"3d")))) # true
+# display(plot_imagem(rotacao(90, "x", cubo())))           # true
+# display(plot_imagem(rotacao(90, "y", cubo())))           # true
+# display(plot_imagem(rotacao(90, "z", cubo())))           # true
 
 
-# =========== reflexao ===========
+
+# =========================> reflexao <=========================
 # display(plot_imagem(reflexao("x", numeros(00,"2d"))))   # true
 # display(plot_imagem(reflexao("y", numeros(00,"2d"))))   # true
 # display(plot_imagem(reflexao("xy", numeros(00,"2d"))))  # true
@@ -271,15 +278,33 @@ display(plot_imagem(cubo()))
 # display(plot_imagem(reflexao("y", cubo())))             # true
 # display(plot_imagem(reflexao("z", cubo())))             # true
 
-# display(plot_imagem(reflexao("xy", numeros(00,"3d")))) # true false
-# display(plot_imagem(reflexao("yx", numeros(00,"3d")))) # true false
-# display(plot_imagem(reflexao("xz", numeros(00,"3d"))))
-# display(plot_imagem(reflexao("zx", numeros(00,"3d"))))
-# display(plot_imagem(reflexao("yz", numeros(00,"3d"))))
-# display(plot_imagem(reflexao("zy", numeros(00,"3d"))))
+# display(plot_imagem(reflexao("xy", numeros(00,"3d"))))  # true
+# display(plot_imagem(reflexao("yx", numeros(00,"3d"))))  # true
+# display(plot_imagem(reflexao("xy", cubo())))            # true
+# display(plot_imagem(reflexao("yx", cubo())))            # true
+# display(plot_imagem(reflexao("xz", numeros(00,"3d"))))  # true
+# display(plot_imagem(reflexao("zx", numeros(00,"3d"))))  # true
+# display(plot_imagem(reflexao("xz", cubo())))            # true
+# display(plot_imagem(reflexao("zx", cubo())))            # true
+# display(plot_imagem(reflexao("yz", numeros(00,"3d"))))  # true
+# display(plot_imagem(reflexao("zy", numeros(00,"3d"))))  # true
+# display(plot_imagem(reflexao("yz", cubo())))            # true
+# display(plot_imagem(reflexao("zy", cubo())))            # true
 
-# display(plot_imagem(reflexao("xyz", numeros(00,"3d"))))
-# display(plot_imagem(reflexao("xyz", cubo())))
+# display(plot_imagem(reflexao("xyz", numeros(00,"3d")))) # true
+# display(plot_imagem(reflexao("xzy", numeros(00,"3d")))) # true
+# display(plot_imagem(reflexao("yxz", numeros(00,"3d")))) # true
+# display(plot_imagem(reflexao("yzx", numeros(00,"3d")))) # true
+# display(plot_imagem(reflexao("zxy", numeros(00,"3d")))) # true
+# display(plot_imagem(reflexao("zyx", numeros(00,"3d")))) # true
+# display(plot_imagem(reflexao("xyz", cubo())))           # true
+# display(plot_imagem(reflexao("xzy", cubo())))           # true
+# display(plot_imagem(reflexao("yxz", cubo())))           # true
+# display(plot_imagem(reflexao("yzx", cubo())))           # true
+# display(plot_imagem(reflexao("zxy", cubo())))           # true
+# display(plot_imagem(reflexao("zyx", cubo())))           # true
+
+
 
 # =========== esticamento ===========
 
@@ -293,11 +318,19 @@ display(plot_imagem(cubo()))
 #========================================#
 #       animacao
 #========================================#
-# angulos = collect(0 : 10 : 180)
+# angulos = collect(0 : 10 : 360)
 
 # animacao = @animate for a in angulos
     
-#     imagem = plot_imagem(rotacao(a,numeros(1,"3d")))
+#     if a <= 90
+#         imagem = plot_imagem(rotacao(a,"x",cubo()))
+#     elseif a > 90 && a <= 180
+#         imagem = plot_imagem(rotacao(-a,"y",cubo()))
+#     elseif a > 180 && a <= 270
+#         imagem = plot_imagem(rotacao(a,"z",cubo()))
+#     elseif a > 270 && a <= 360
+#         imagem = plot_imagem(rotacao(a,"x",cubo()))
+#     end
     
 # end
 
