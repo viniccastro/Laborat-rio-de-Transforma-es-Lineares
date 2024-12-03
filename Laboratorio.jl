@@ -253,6 +253,8 @@ end
 # display(plot_imagem(numeros(00, "3d")))
 # display(plot_imagem(cubo()))
 
+
+
 # ==========================> rotacao <==========================
 # display(plot_imagem(rotacao(90, numeros(00,"2d"))))      # true
 # display(plot_imagem(rotacao(90, "x", numeros(00,"2d")))) # true
@@ -306,7 +308,16 @@ end
 
 
 
-# =========== esticamento ===========
+# ==============================> esticamento <===============================
+# display(plot_imagem(esticamento([0.5, 0.5], numeros(00, "2d"))))      # true
+# display(plot_imagem(esticamento([1.2, 0.5], numeros(00, "2d"))))      # true
+# display(plot_imagem(esticamento([0.5, 0.5, 0.5], numeros(00, "2d")))) # true
+# display(plot_imagem(esticamento([0.5, 0.5], numeros(00, "3d"))))      # true
+# display(plot_imagem(esticamento([0.5, 0.5, 0.5], numeros(00, "3d")))) # true
+# display(plot_imagem(esticamento([1.4, 0.9, 0.1], numeros(00, "3d")))) # true
+# display(plot_imagem(esticamento([0.5, 0.5, 0.5], cubo())))            # true
+# display(plot_imagem(esticamento([1.4, 0.9, 0.1], cubo())))            # true
+
 
 # =========== cisalhamento ===========
 
