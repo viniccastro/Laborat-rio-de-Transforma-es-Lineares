@@ -1,29 +1,42 @@
 """
-Aplica a transformacao de esticamento em uma matriz de pontos baseado-se em dois valores dados.
+Aplica a transformacao de esticamento em uma matriz de pontos baseado-se em um vetor de esticamento dado.
 
 # Parametros
-- `valor_x::Float64              `: valor que vai esticar a coordenada do eixo x
-- `valor_y::Float64              `: valor que vai esticar a coordenada do eixo y
+- `vetor_escala::Vector{Float64} `: Vetor com os valore que vam esticar cada coordenada.
 - `matriz_pontos::Matrix{Float64}`: Coordenadas de cada ponto de modo que a linha 1 tenha os valores do eixo x e a linha 2 tenha os valores do eixo y.
 
 # Retorna
 - A matriz com as coordenadas dos pontos apos transformacao.
 """
-function esticamento(valor_x::Float64, valor_y::Float64, matriz_pontos::Matrix{Float64}) :: Matrix{Float64}
+function esticamento(vetor_escala::Vector{Float64}, matriz_pontos::Matrix{Float64}) :: Matrix{Float64}
     
-    # matriz de esticamento
-    matriz_est = [valor_x 0 ; 0  valor_y]
+    # dimencao e quantidade de pontos
+    valor_l, valor_c = size(matriz_pontos)
+    valor_d = length(vetor_escala)
+    @assert valor_l == valor_d "Dimencao do vetor_escala e da matriz_pontos sao incompativeis." # verificador
 
-    # quantidade de pontos
-    quant_pontos = size(matriz_pontos)[1]
+    # matriz de esticamento
+    if valor_l == 2
+
+        matriz_est = [vetor_escala[1] 0 ; 0  vetor_escala[2]]
+        
+    elseif valor_l == 3
+
+        matriz_est = [vetor_escala[1] 0 0 ; 0  vetor_escala[2] 0 ; 0 0 vetor_escala[3]]
+
+    else
+
+        error("Dimencao dos pontos invalida, matriz_pontos deve deve ter dimencao (2 x np) ou (3 x np) onde np e o numero de pontos.")
+
+    end
 
     # novas coordenadas
     nova_matriz = zeros(size(matriz_pontos))
 
     # aplicando a transformacao nos vetores
-    for i in 1:quant_pontos
+    for i in 1:valor_c
 
-        nova_matriz[1:2, i] = matriz_est * matriz_pontos[1:2, i]
+        nova_matriz[1:valor_l, i] = matriz_est * matriz_pontos[1:valor_l, i]
 
     end
 
