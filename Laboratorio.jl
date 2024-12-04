@@ -25,6 +25,9 @@ plano_2d = numeros(00, "2d")
 plano_3d = numeros(00, "3d")
 cuboo    = cubo()
 
+# display(desenho(plano_2d))
+# display(desenho(plano_3d))
+# display(desenho(cubo))
 
 
 #========================================#
@@ -71,7 +74,6 @@ cuboo    = cubo()
     
 # end
 # gif(animacao, fps=10)
-# desenho(cisalhamento(0.7,"yz",cuboo))
 
 
 # =====>  exemplo 2
@@ -97,6 +99,72 @@ cuboo    = cubo()
 #     elseif a > 140
 #         imagem = desenho(cisalhamento(a/1000,"yz", cuboo1))
 #     end
+    
+# end
+# gif(animacao, fps=10)
+
+
+# =====>  exemplo 4
+# valores_1 = collect(0 : 1/15 : 1)
+# animacao = @animate for a in valores_1
+
+#     matriz = [a 0.0 0.0 ; 0.0 -a 0.0 ; 0.0 0.0 -a]
+#     imagem = desenho(aleatoria(matriz,cuboo))
+    
+# end
+# gif(animacao, fps=10)
+
+
+# =====>  exemplo 5
+# valores_1 = collect(-1 : 1/15 : 1)
+# animacao = @animate for a in valores_1
+
+#     matriz = [a 0.0 0.0 ; 0.0 -a 0.0 ; 0.0 0.0 -a]
+#     imagem = desenho(aleatoria(matriz,cuboo))
+    
+# end
+# gif(animacao, fps=10)
+
+
+# # =====>  exemplo 6
+# valores_1 = collect(-1 : 1/15 : 0)
+# animacao = @animate for a in valores_1
+
+#     matriz = [-a 0.0 0.0 ; 0.0 -a 0.0 ; 0.0 0.0 -a]
+#     imagem = desenho(aleatoria(matriz,cuboo))
+    
+# end
+# gif(animacao, fps=10)
+
+
+# =====>  exemplo 7
+# valores_1 = collect(-1 : 1/15 : 0)
+# animacao = @animate for a in valores_1
+
+#     matriz = [1 0.0 0.0 ; 0.0 1 0.0 ; 0.0 0.0 -a]
+#     imagem = desenho(aleatoria(matriz,cuboo))
+    
+# end
+# gif(animacao, fps=10)
+
+
+# =====>  exemplo 8
+# valores_1 = collect(0 : 1/15 : 1)
+# animacao = @animate for a in valores_1
+
+#     matriz = [1.0 a 0.0 ; 0.0 1.0 a ; a 0.0 1.0]
+#     imagem = desenho(aleatoria(matriz,cuboo))
+    
+# end
+# gif(animacao, fps=10)
+
+
+# =====>  exemplo 9
+# valores_1 = collect(0 : 1/15 : 1)
+# animacao = @animate for a in valores_1
+
+#     matriz = [1.0 a a ; a 1.0 a ; a a 1.0]
+#     imagem = desenho(aleatoria(matriz,cuboo))
     
 # end
 # gif(animacao, fps=10)
