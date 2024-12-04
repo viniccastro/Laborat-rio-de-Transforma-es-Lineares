@@ -1,8 +1,9 @@
 # bibliotecas
 using Plots
-# using PlotlyJS
 using LinearAlgebra
+
 # Definindo PlotlyJS como backend
+# using PlotlyJS
 plotlyjs()
 
 #========================================#
@@ -20,8 +21,8 @@ include("transf_aleatoria.jl")     # aleatoria
 #========================================#
 #       Dados de entrada
 #========================================#
-plano_2d = numeros(1, "2d")
-plano_3d = numeros(1, "3d")
+plano_2d = numeros(00, "2d")
+plano_3d = numeros(00, "3d")
 cuboo    = cubo()
 
 
@@ -64,7 +65,6 @@ cuboo    = cubo()
 #========================================#
 # =====>  exemplo 1
 # angulos_1 = collect(0 : 10 : 360)
-
 # animacao = @animate for a in angulos_1
     
 #     imagem = desenho(rotacao(a,"x",cuboo))
@@ -73,30 +73,29 @@ cuboo    = cubo()
 # gif(animacao, fps=10)
 # desenho(cisalhamento(0.7,"yz",cuboo))
 
-# =====>  exemplo 2
-empurrao = collect(0.0 : 10 : 7.7)
 
-animacao = @animate for a in empurrao
+# =====>  exemplo 2
+# empurrao = collect(0 : 0.5/10 : 1.0)
+# animacao = @animate for a in empurrao
     
-    imagem = desenho(cisalhamento(a,"xy",cuboo))
+#     # imagem = desenho(cisalhamento(a, "x", plano_2d))
+#     imagem = desenho(cisalhamento(a, "yz", cuboo))
     
-end
-gif(animacao, fps=10)
+# end
+# gif(animacao, fps=10)
 
 
 # =====>  exemplo 3
-# angulos_2 = collect(0 : 10 : 360)
-
+# angulos_2 = collect(0 : 10 : 500)
+# cuboo1 = rotacao(90,"x",cuboo)
 # animacao = @animate for a in angulos_2
     
 #     if a <= 90
-#         imagem = desenho(rotacao(a,"x",cuboo()))
-#     elseif a > 90 && a <= 180
-#         imagem = desenho(rotacao(-a,"y",cuboo()))
-#     elseif a > 180 && a <= 270
-#         imagem = desenho(rotacao(a,"z",cuboo()))
-#     elseif a > 270 && a <= 360
-#         imagem = desenho(rotacao(a,"x",cuboo()))
+        
+#         imagem = desenho(rotacao(a,"x",cuboo))
+
+#     elseif a > 140
+#         imagem = desenho(cisalhamento(a/1000,"yz", cuboo1))
 #     end
     
 # end
