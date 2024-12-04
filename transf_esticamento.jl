@@ -1,4 +1,5 @@
 """
+# Esticamento
 Aplica a transformacao de esticamento em uma matriz de pontos baseado-se em um vetor de esticamento dado.
 
 # Parametros

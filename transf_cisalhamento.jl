@@ -1,15 +1,15 @@
 """
-# Cisalhado
+# Cisalhamento
 Aplica a transformacao de cisalhamento em uma matriz de pontos baseado-se em uma orientacao e um parametro dado.
 
-# Parametros
+# Parametros para o R²
 - `valor::Float64                `: dita o quanto sera cisalhado.
 - `orientacao::String            `: dita a direcao da tansfomacao:
     * ``"x"`` : em relacao ao eixo x (horizontal);
     * ``"y"`` : em relacao ao eixo y (vertical).
 - `matriz_pontos::Matrix{Float64}`: Coordenadas de cada ponto de modo que a linha 1 tenha os valores do eixo x e a linha 2 tenha os valores do eixo y.
 
-# Parametros
+# Parametros para o R³
 - `valor::Float64                `: dita o quanto sera cisalhado.
 - `orientacao::String            `: dita a direcao da tansfomacao:
     * ``"xy"`` : em relacao ao plano xy;

@@ -1,4 +1,5 @@
 """
+# Aleatoria
 Aplica uma transformacao na matriz de pontos baseado-se em uma matriz dada.
 
 # Parametros

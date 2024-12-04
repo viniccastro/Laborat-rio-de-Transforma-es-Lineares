@@ -1,9 +1,8 @@
 """
 # Reflexao
-# `===== Reflexao no R² =====`
 Aplica a transformacao de reflexao em uma matriz de pontos do R² baseado-se em um eixo dado.
 
-# Parametros
+# Parametros para o R²
 - `eixo::String                  `: dita a direcao da tansfomacao:
     * `"x"`   : em relacao ao eixo x;
     * `"y"`   : em relacao ao eixo y;
@@ -11,13 +10,7 @@ Aplica a transformacao de reflexao em uma matriz de pontos do R² baseado-se em 
     * `"-xy"` : em relacao ao eixo -xy.
 - `matriz_pontos::Matrix{Float64}`: Coordenadas de cada ponto de modo que a linha 1 tenha os valores do eixo x e a linha 2 tenha os valores do eixo y.
 
-# Retorna
-- A matriz com as coordenadas dos pontos apos transformacao.
-
-# `===== Reflexao no R³ =====`
-Aplica a transformacao de reflexao em uma matriz de pontos do R³ baseado-se em um eixo dado.
-
-# Parametros
+# Parametros para o R³
 - `eixo::String                  `: dita a direcao da tansfomacao:
     * `"x"`  : em relacao ao eixo x;
     * `"y"`  : em relacao ao eixo y;
